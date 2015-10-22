@@ -1,9 +1,9 @@
-  .btn {
+  .bluebtn {
   appearance: none;
   background-color: $white;
-  border: 0;
+  border: 1px solid $lightblue;
   border-radius: $base-border-radius;
-  color: #fff;
+  color: $lightblue;
   cursor: pointer;
   display: inline-block;
   font-family: $base-font-family;
@@ -13,6 +13,7 @@
   line-height: 1;
   padding: $small-spacing $base-spacing;
   text-decoration: none;
+  text-align: center;
   transition: background-color $base-duration $base-timing;
   user-select: none;
   vertical-align: middle;
@@ -20,7 +21,7 @@
 
   &:hover,
   &:focus {
-    background-color: shade($action-color, 20%);
+    background-color:$lightblue;
     color: #fff;
   }
 
@@ -32,4 +33,78 @@
       background-color: $action-color;
     }
   }
+}
+
+.greenbtn {
+appearance: none;
+background-color: $white;
+border: 1px solid $lightgreen;
+border-radius: $base-border-radius;
+color: $lightgreen;
+cursor: pointer;
+display: inline-block;
+font-family: $base-font-family;
+font-size: $base-font-size;
+-webkit-font-smoothing: antialiased;
+font-weight: 600;
+line-height: 1;
+padding: $small-spacing $base-spacing;
+text-decoration: none;
+text-align: center;
+transition: background-color $base-duration $base-timing;
+user-select: none;
+vertical-align: middle;
+white-space: nowrap;
+
+&:hover,
+&:focus {
+  background-color:$lightgreen;
+  color: #fff;
+}
+
+&:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+
+  &:hover {
+    background-color: $action-color;
+  }
+}
+}
+
+.pinkbtn {
+appearance: none;
+background-color: $white;
+border: 1px solid $lightpink;
+border-radius: $base-border-radius;
+color: $lightpink;
+cursor: pointer;
+display: inline-block;
+font-family: $base-font-family;
+font-size: $base-font-size;
+-webkit-font-smoothing: antialiased;
+font-weight: 600;
+line-height: 1;
+padding: $small-spacing $base-spacing;
+text-decoration: none;
+text-align: center;
+transition: background-color $base-duration $base-timing;
+user-select: none;
+vertical-align: middle;
+white-space: nowrap;
+
+&:hover,
+&:focus {
+  background-color:$lightpink;
+  color: #fff;
+}
+
+&:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+
+  &:hover {
+    background-color: $action-color;
+  }
+}
 }
