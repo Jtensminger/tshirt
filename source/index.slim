@@ -1,52 +1,31 @@
 .shirtlist
-  .box
-    .rotate
-      .bluebtn
-        i class="fa fa-repeat"
-    .picture
-      = image_tag('blue_front.jpg', class: "front")
-    .buttons
-      .bluebtn
-        i class="fa fa-exchange"
-      .bluebtn
-        i class="fa fa-heart-o"
-      .bluebtn
-        i XL
-      .bluebtn
-        i class="fa fa-square"
-      .bluebtn
-        i class="fa fa-shopping-cart"
-  .box
-    .rotate
-      .greenbtn
-        i class="fa fa-repeat"
-    .picture
-      = image_tag('green_front.jpg', class: "front")
-    .buttons
-      .greenbtn
-        i class="fa fa-exchange"
-      .greenbtn
-        i class="fa fa-heart-o"
-      .greenbtn
-        i XL
-      .greenbtn
-        i class="fa fa-square"
-      .greenbtn
-        i class="fa fa-shopping-cart"
-  .box
-    .rotate
-      .pinkbtn
-        i class="fa fa-repeat"
-    .picture
-      = image_tag('pink_front.jpg', class: "front")
-    .buttons
-      .pinkbtn
-        i class="fa fa-exchange"
-      .pinkbtn
-        i class="fa fa-heart-o"
-      .pinkbtn
-        i XL
-      .pinkbtn
-        i class="fa fa-square"
-      .pinkbtn
-        i class="fa fa-shopping-cart"
+  - ["blue", "green", "pink"].each do |color|
+    .box
+      button class="#{color} rotate"
+      .picture = image_tag(color+'_front.jpg', class: "front")
+      .buttons
+        button class="#{color}"
+          i.fa.fa-exchange
+        button class="#{color}"
+          i.fa.fa-heart-o
+        button class="#{color}"
+          i XL
+        button class="#{color}"
+          .tooltip-item
+            i.fa.fa-square
+            .tooltip
+              ul
+                li
+                  p
+                    i.fa.fa-square
+                li
+                  p
+                    i.fa.fa-square
+                li
+                  p
+                    i.fa.fa-square
+                li
+                  p
+                    i.fa.fa-square
+        button class="#{color}"
+          i.fa.fa-shopping-cart

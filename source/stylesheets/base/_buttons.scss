@@ -1,9 +1,7 @@
-  .bluebtn {
+button {
   appearance: none;
   background-color: $white;
-  border: 1px solid $lightblue;
   border-radius: $base-border-radius;
-  color: $lightblue;
   cursor: pointer;
   display: inline-block;
   font-family: $base-font-family;
@@ -21,7 +19,6 @@
 
   &:hover,
   &:focus {
-    background-color:$lightblue;
     color: #fff;
   }
 
@@ -35,76 +32,30 @@
   }
 }
 
-.greenbtn {
-appearance: none;
-background-color: $white;
-border: 1px solid $lightgreen;
-border-radius: $base-border-radius;
-color: $lightgreen;
-cursor: pointer;
-display: inline-block;
-font-family: $base-font-family;
-font-size: $base-font-size;
--webkit-font-smoothing: antialiased;
-font-weight: 600;
-line-height: 1;
-padding: $small-spacing $base-spacing;
-text-decoration: none;
-text-align: center;
-transition: background-color $base-duration $base-timing;
-user-select: none;
-vertical-align: middle;
-white-space: nowrap;
-
-&:hover,
-&:focus {
-  background-color:$lightgreen;
-  color: #fff;
+.rotate {
+  position:relative;
 }
 
-&:disabled {
-  cursor: not-allowed;
-  opacity: 0.5;
+.rotate:before {
+    content: '\f01e';
+    font-family: FontAwesome;
+ }
 
-  &:hover {
-    background-color: $action-color;
+$colors: "blue" "green" "pink";
+
+@each $color in $colors {
+  .#{$color} {
+    $code: $lightpink;
+    @if $color == "blue" {
+      $code: $lightblue;
+    } @elseif $color == "green" {
+      $code: $lightgreen;
+    }
+    border: 1px solid $code;
+    color: $code;
+    &:hover,
+    &:focus {
+      background-color: $code;
+    }
   }
-}
-}
-
-.pinkbtn {
-appearance: none;
-background-color: $white;
-border: 1px solid $lightpink;
-border-radius: $base-border-radius;
-color: $lightpink;
-cursor: pointer;
-display: inline-block;
-font-family: $base-font-family;
-font-size: $base-font-size;
--webkit-font-smoothing: antialiased;
-font-weight: 600;
-line-height: 1;
-padding: $small-spacing $base-spacing;
-text-decoration: none;
-text-align: center;
-transition: background-color $base-duration $base-timing;
-user-select: none;
-vertical-align: middle;
-white-space: nowrap;
-
-&:hover,
-&:focus {
-  background-color:$lightpink;
-  color: #fff;
-}
-
-&:disabled {
-  cursor: not-allowed;
-  opacity: 0.5;
-
-  &:hover {
-    background-color: $action-color;
-  }
-}
 }
