@@ -1,15 +1,25 @@
 .shirtlist
-  - ["blue", "green", "pink"].each do |color|
+  - ["blue", "green", "pink"].each_with_index do |color, i|
     .box
-      button class="#{color} rotate"
-      .picture = image_tag(color+'_front.jpg', class: "front")
+      button class="#{color} rotate flip#{i}"
+      img.front id="flip#{i}" src="#{image_path(color + '_front.jpg')}" data-swap="#{image_path(color + '_back.jpg')}"
       .buttons
         button class="#{color}"
           i.fa.fa-exchange
         button class="#{color}"
           i.fa.fa-heart-o
-        button class="#{color}"
+        button class="#{color} tooltip-item"
           i XL
+          .tooltip
+            ul
+              li
+                p SM
+              li
+                p M
+              li
+                p L
+              li
+                p XL
         button class="#{color} tooltip-item"
           i.fa.fa-square
           .tooltip

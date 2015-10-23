@@ -7,6 +7,7 @@ gem "middleman-deploy"
 gem "slim"
 gem "bourbon"
 gem "neat"
+gem "middleman-jquery"
 # Live-reloading plugin
 gem "middleman-livereload", "~> 3.1.0"
 
