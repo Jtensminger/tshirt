@@ -32,14 +32,6 @@ button {
   }
 }
 
-.rotate {
-  position:relative;
-}
-
-.rotate:before {
-    content: '\f01e';
-    font-family: FontAwesome;
- }
 
 $colors: "blue" "green" "pink";
 
@@ -56,6 +48,41 @@ $colors: "blue" "green" "pink";
     &:hover,
     &:focus {
       background-color: $code;
+    }
+  }
+}
+.stop {
+  appearance: none;
+  border-color: $action-color;
+  border: 3px solid lightblue;
+  color: lightblue;
+  cursor: pointer;
+  display: inline-block;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 600;
+  line-height: 1;
+  padding: $small-spacing $base-spacing;
+  text-decoration: none;
+  transition: background-color $base-duration $base-timing;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  margin: -4px -2px;
+
+  &:hover,
+  &:focus {
+    background-color: lightblue;
+    color: #fff;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+
+    &:hover {
+      background-color: $action-color;
     }
   }
 }
